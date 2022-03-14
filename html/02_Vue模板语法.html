@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue模板语法</title>
+    <script src="./../js/vue@2.6.14.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>插值语法</h1>
+        <h3>你好，{{name}}</h3>
+        <hr>
+        <h1>指令语法</h1>
+        <a v-bind:href="company.url.toUpperCase()" x="hello">点我去{{company.name}}工作1</a>
+        <a :href="company.url" x="hello">点我去{{company.name}}工作2</a>
+    </div>
+    <script>
+        Vue.config.productionTip = false //阻止 vue 在启动时生成生产提示。 
+
+        new Vue({
+            el: '#app',
+            data: {
+                name: 'morgan',
+                company: {
+                    name: 'mofalong',
+                    url: 'http://mofalong.cn'
+                }
+
+            }
+        });
+    </script>
+</body>
+
+</html>
